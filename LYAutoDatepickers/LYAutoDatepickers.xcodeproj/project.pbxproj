@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B208F091F0F328C00C30A51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B208F081F0F328C00C30A51 /* AppDelegate.swift */; };
+		8B208F0B1F0F328C00C30A51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B208F0A1F0F328C00C30A51 /* ViewController.swift */; };
+		8B208F0E1F0F328C00C30A51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B208F0C1F0F328C00C30A51 /* Main.storyboard */; };
+		8B208F101F0F328C00C30A51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B208F0F1F0F328C00C30A51 /* Assets.xcassets */; };
+		8B208F131F0F328C00C30A51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B208F111F0F328C00C30A51 /* LaunchScreen.storyboard */; };
+		8B208F211F0F330200C30A51 /* LYAutoDatepickersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B208F201F0F330200C30A51 /* LYAutoDatepickersExtensions.swift */; };
+		8B208F231F0F33B900C30A51 /* LYAutoDatepickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B208F221F0F33B900C30A51 /* LYAutoDatepickers.swift */; };
+		8B208F251F0F369F00C30A51 /* LYAutoPickBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B208F241F0F369F00C30A51 /* LYAutoPickBaseController.swift */; };
+		8B208F281F0F49D200C30A51 /* LYAutoDatepickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B208F261F0F49D200C30A51 /* LYAutoDatepickController.swift */; };
+		8B208F291F0F49D200C30A51 /* LYAutoDatepickController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B208F271F0F49D200C30A51 /* LYAutoDatepickController.xib */; };
+		8B208F2E1F0F49FA00C30A51 /* LYAutoTimepickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B208F2C1F0F49FA00C30A51 /* LYAutoTimepickController.swift */; };
+		8B208F2F1F0F49FA00C30A51 /* LYAutoTimepickController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B208F2D1F0F49FA00C30A51 /* LYAutoTimepickController.xib */; };
+		8B208F321F0F680D00C30A51 /* LYAutoYearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B208F301F0F680D00C30A51 /* LYAutoYearCell.swift */; };
+		8B208F331F0F680D00C30A51 /* LYAutoYearCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B208F311F0F680D00C30A51 /* LYAutoYearCell.xib */; };
+		8B208F361F0F682F00C30A51 /* LYAutoCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B208F341F0F682F00C30A51 /* LYAutoCalendarCell.swift */; };
+		8B208F371F0F682F00C30A51 /* LYAutoCalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B208F351F0F682F00C30A51 /* LYAutoCalendarCell.xib */; };
+		8B7D92E91F13135100EB5C7A /* LYAutoDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7D92E71F13135100EB5C7A /* LYAutoDayCell.swift */; };
+		8B7D92EA1F13135100EB5C7A /* LYAutoDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7D92E81F13135100EB5C7A /* LYAutoDayCell.xib */; };
+		8B7D92EC1F13697D00EB5C7A /* LYAutoClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7D92EB1F13697D00EB5C7A /* LYAutoClock.swift */; };
+		C46836DF5B12FD389817C0B5 /* Pods_LYAutoDatepickers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E5B6B56B1600E1D88D256B /* Pods_LYAutoDatepickers.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01E5B6B56B1600E1D88D256B /* Pods_LYAutoDatepickers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYAutoDatepickers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44EC6017C64755E4E80F4735 /* Pods-LYAutoDatepickers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYAutoDatepickers.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYAutoDatepickers/Pods-LYAutoDatepickers.release.xcconfig"; sourceTree = "<group>"; };
+		8B208F051F0F328C00C30A51 /* LYAutoDatepickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYAutoDatepickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B208F081F0F328C00C30A51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B208F0A1F0F328C00C30A51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B208F0D1F0F328C00C30A51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B208F0F1F0F328C00C30A51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B208F121F0F328C00C30A51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B208F141F0F328C00C30A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B208F201F0F330200C30A51 /* LYAutoDatepickersExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoDatepickersExtensions.swift; sourceTree = "<group>"; };
+		8B208F221F0F33B900C30A51 /* LYAutoDatepickers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoDatepickers.swift; sourceTree = "<group>"; };
+		8B208F241F0F369F00C30A51 /* LYAutoPickBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoPickBaseController.swift; sourceTree = "<group>"; };
+		8B208F261F0F49D200C30A51 /* LYAutoDatepickController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoDatepickController.swift; sourceTree = "<group>"; };
+		8B208F271F0F49D200C30A51 /* LYAutoDatepickController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYAutoDatepickController.xib; sourceTree = "<group>"; };
+		8B208F2C1F0F49FA00C30A51 /* LYAutoTimepickController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoTimepickController.swift; sourceTree = "<group>"; };
+		8B208F2D1F0F49FA00C30A51 /* LYAutoTimepickController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYAutoTimepickController.xib; sourceTree = "<group>"; };
+		8B208F301F0F680D00C30A51 /* LYAutoYearCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoYearCell.swift; sourceTree = "<group>"; };
+		8B208F311F0F680D00C30A51 /* LYAutoYearCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYAutoYearCell.xib; sourceTree = "<group>"; };
+		8B208F341F0F682F00C30A51 /* LYAutoCalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoCalendarCell.swift; sourceTree = "<group>"; };
+		8B208F351F0F682F00C30A51 /* LYAutoCalendarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYAutoCalendarCell.xib; sourceTree = "<group>"; };
+		8B7D92E71F13135100EB5C7A /* LYAutoDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoDayCell.swift; sourceTree = "<group>"; };
+		8B7D92E81F13135100EB5C7A /* LYAutoDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYAutoDayCell.xib; sourceTree = "<group>"; };
+		8B7D92EB1F13697D00EB5C7A /* LYAutoClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoClock.swift; sourceTree = "<group>"; };
+		9B8B20FA4950CE8CE829E7E6 /* Pods-LYAutoDatepickers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYAutoDatepickers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYAutoDatepickers/Pods-LYAutoDatepickers.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B208F021F0F328C00C30A51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C46836DF5B12FD389817C0B5 /* Pods_LYAutoDatepickers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		430A4A867B9E6CD831937C78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01E5B6B56B1600E1D88D256B /* Pods_LYAutoDatepickers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D9F0F4A4A6EAF7CD9F3B918 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B20FA4950CE8CE829E7E6 /* Pods-LYAutoDatepickers.debug.xcconfig */,
+				44EC6017C64755E4E80F4735 /* Pods-LYAutoDatepickers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B208EFC1F0F328C00C30A51 = {
+			isa = PBXGroup;
+			children = (
+				8B208F1D1F0F32D700C30A51 /* Classes */,
+				8B208F071F0F328C00C30A51 /* LYAutoDatepickers */,
+				8B208F061F0F328C00C30A51 /* Products */,
+				7D9F0F4A4A6EAF7CD9F3B918 /* Pods */,
+				430A4A867B9E6CD831937C78 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8B208F061F0F328C00C30A51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B208F051F0F328C00C30A51 /* LYAutoDatepickers.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B208F071F0F328C00C30A51 /* LYAutoDatepickers */ = {
+			isa = PBXGroup;
+			children = (
+				8B208F081F0F328C00C30A51 /* AppDelegate.swift */,
+				8B208F0A1F0F328C00C30A51 /* ViewController.swift */,
+				8B208F0C1F0F328C00C30A51 /* Main.storyboard */,
+				8B208F0F1F0F328C00C30A51 /* Assets.xcassets */,
+				8B208F111F0F328C00C30A51 /* LaunchScreen.storyboard */,
+				8B208F141F0F328C00C30A51 /* Info.plist */,
+			);
+			path = LYAutoDatepickers;
+			sourceTree = "<group>";
+		};
+		8B208F1D1F0F32D700C30A51 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8B208F1E1F0F32D700C30A51 /* Classes */,
+				8B208F1F1F0F32D700C30A51 /* Resources */,
+			);
+			name = Classes;
+			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		8B208F1E1F0F32D700C30A51 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8B208F201F0F330200C30A51 /* LYAutoDatepickersExtensions.swift */,
+				8B208F221F0F33B900C30A51 /* LYAutoDatepickers.swift */,
+				8B208F241F0F369F00C30A51 /* LYAutoPickBaseController.swift */,
+				8B208F261F0F49D200C30A51 /* LYAutoDatepickController.swift */,
+				8B208F271F0F49D200C30A51 /* LYAutoDatepickController.xib */,
+				8B208F2C1F0F49FA00C30A51 /* LYAutoTimepickController.swift */,
+				8B208F2D1F0F49FA00C30A51 /* LYAutoTimepickController.xib */,
+				8B208F301F0F680D00C30A51 /* LYAutoYearCell.swift */,
+				8B208F311F0F680D00C30A51 /* LYAutoYearCell.xib */,
+				8B208F341F0F682F00C30A51 /* LYAutoCalendarCell.swift */,
+				8B208F351F0F682F00C30A51 /* LYAutoCalendarCell.xib */,
+				8B7D92E71F13135100EB5C7A /* LYAutoDayCell.swift */,
+				8B7D92E81F13135100EB5C7A /* LYAutoDayCell.xib */,
+				8B7D92EB1F13697D00EB5C7A /* LYAutoClock.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8B208F1F1F0F32D700C30A51 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B208F041F0F328C00C30A51 /* LYAutoDatepickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B208F171F0F328C00C30A51 /* Build configuration list for PBXNativeTarget "LYAutoDatepickers" */;
+			buildPhases = (
+				CE54D0F86316314DDCF4E742 /* [CP] Check Pods Manifest.lock */,
+				8B208F011F0F328C00C30A51 /* Sources */,
+				8B208F021F0F328C00C30A51 /* Frameworks */,
+				8B208F031F0F328C00C30A51 /* Resources */,
+				CC2313B6C6ADB3DEE1EABD15 /* [CP] Embed Pods Frameworks */,
+				DE86F295D4FDA4FE6014D222 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LYAutoDatepickers;
+			productName = LYAutoDatepickers;
+			productReference = 8B208F051F0F328C00C30A51 /* LYAutoDatepickers.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B208EFD1F0F328C00C30A51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = lyning;
+				TargetAttributes = {
+					8B208F041F0F328C00C30A51 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 8B208F001F0F328C00C30A51 /* Build configuration list for PBXProject "LYAutoDatepickers" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B208EFC1F0F328C00C30A51;
+			productRefGroup = 8B208F061F0F328C00C30A51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B208F041F0F328C00C30A51 /* LYAutoDatepickers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B208F031F0F328C00C30A51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B208F331F0F680D00C30A51 /* LYAutoYearCell.xib in Resources */,
+				8B208F291F0F49D200C30A51 /* LYAutoDatepickController.xib in Resources */,
+				8B208F131F0F328C00C30A51 /* LaunchScreen.storyboard in Resources */,
+				8B208F2F1F0F49FA00C30A51 /* LYAutoTimepickController.xib in Resources */,
+				8B208F371F0F682F00C30A51 /* LYAutoCalendarCell.xib in Resources */,
+				8B208F101F0F328C00C30A51 /* Assets.xcassets in Resources */,
+				8B7D92EA1F13135100EB5C7A /* LYAutoDayCell.xib in Resources */,
+				8B208F0E1F0F328C00C30A51 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CC2313B6C6ADB3DEE1EABD15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYAutoDatepickers/Pods-LYAutoDatepickers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE54D0F86316314DDCF4E742 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE86F295D4FDA4FE6014D222 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYAutoDatepickers/Pods-LYAutoDatepickers-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B208F011F0F328C00C30A51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B208F0B1F0F328C00C30A51 /* ViewController.swift in Sources */,
+				8B208F361F0F682F00C30A51 /* LYAutoCalendarCell.swift in Sources */,
+				8B208F211F0F330200C30A51 /* LYAutoDatepickersExtensions.swift in Sources */,
+				8B208F2E1F0F49FA00C30A51 /* LYAutoTimepickController.swift in Sources */,
+				8B7D92E91F13135100EB5C7A /* LYAutoDayCell.swift in Sources */,
+				8B208F281F0F49D200C30A51 /* LYAutoDatepickController.swift in Sources */,
+				8B208F091F0F328C00C30A51 /* AppDelegate.swift in Sources */,
+				8B208F231F0F33B900C30A51 /* LYAutoDatepickers.swift in Sources */,
+				8B208F321F0F680D00C30A51 /* LYAutoYearCell.swift in Sources */,
+				8B208F251F0F369F00C30A51 /* LYAutoPickBaseController.swift in Sources */,
+				8B7D92EC1F13697D00EB5C7A /* LYAutoClock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8B208F0C1F0F328C00C30A51 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B208F0D1F0F328C00C30A51 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B208F111F0F328C00C30A51 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B208F121F0F328C00C30A51 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B208F151F0F328C00C30A51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8B208F161F0F328C00C30A51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B208F181F0F328C00C30A51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B8B20FA4950CE8CE829E7E6 /* Pods-LYAutoDatepickers.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = LYAutoDatepickers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyning.LYAutoDatepickers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8B208F191F0F328C00C30A51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44EC6017C64755E4E80F4735 /* Pods-LYAutoDatepickers.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = LYAutoDatepickers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyning.LYAutoDatepickers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B208F001F0F328C00C30A51 /* Build configuration list for PBXProject "LYAutoDatepickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B208F151F0F328C00C30A51 /* Debug */,
+				8B208F161F0F328C00C30A51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B208F171F0F328C00C30A51 /* Build configuration list for PBXNativeTarget "LYAutoDatepickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B208F181F0F328C00C30A51 /* Debug */,
+				8B208F191F0F328C00C30A51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B208EFD1F0F328C00C30A51 /* Project object */;
+}
