@@ -50,7 +50,7 @@ class LYAutoClockDrawView: UIView {
 class LYAutoBaseClock: UIView {
     
     public var currentTime: Int = 0
-    public var selectBlock: ((_ :Int)->Void) = {_ in }
+    public var selectBlock: (Int)->Void = {_ in }
     
     fileprivate let clockView = UIView()
     fileprivate let clockDrawView = LYAutoClockDrawView()

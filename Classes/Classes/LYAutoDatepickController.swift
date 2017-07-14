@@ -15,7 +15,7 @@ class LYAutoDatepickController: LYAutoPickBaseController, UITableViewDelegate, U
     @IBOutlet fileprivate weak var monthLabel: UILabel!
     @IBOutlet fileprivate weak var dayLabel: UILabel!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var tableView: UITableView!
     
     fileprivate var isYear: Bool = false
     

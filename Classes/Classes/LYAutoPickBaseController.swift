@@ -14,7 +14,7 @@ class LYAutoPickBaseController: UIViewController {
     public var date: Date! = Date()
     public var maxDate: Date?
     public var minDate: Date?
-    public var block: (_: Date)->Void = { _ in }
+    public var block: (Date)->Void = { _ in }
     public var presentVc: UIViewController?
     
     override func viewDidLoad() {

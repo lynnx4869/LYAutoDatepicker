@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 class ViewController: UIViewController {
 
@@ -20,16 +21,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBOutlet weak var dateLabel: UILabel!
 
     @IBAction func pickDate(_ sender: UIButton) {
-        //1483200000 1388505600
-        LYAutoDatepickers.showDatepicker(type: .HmS,
+        //1483200000 1388505600 28800 14400 43200
+        LYAutoDatepickers.showDatepicker(type: .YMDHmS,
                                          vc: self,
-                                         date: Date(timeIntervalSince1970: 28800),
-                                         minDate: Date(timeIntervalSince1970: 14400),
-                                         maxDate: Date(timeIntervalSince1970: 43200))
+                                         date: Date(),
+                                         minDate: nil,
+                                         maxDate: nil)
         { (date) in
-            print(date.timeIntervalSince1970)
+            self.dateLabel.text = date.description(with: Locale.current)
         }
     }
 

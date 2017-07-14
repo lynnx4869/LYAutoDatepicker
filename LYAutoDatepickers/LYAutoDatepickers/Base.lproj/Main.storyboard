@@ -35,17 +35,30 @@
                                     <action selector="pickDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wkr-Fg-IEm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBg-fu-hSc">
+                                <rect key="frame" x="30" y="334" width="315" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pBg-fu-hSc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="3Ca-eT-5YS"/>
+                            <constraint firstAttribute="trailing" secondItem="pBg-fu-hSc" secondAttribute="trailing" constant="30" id="6HZ-8T-p1M"/>
                             <constraint firstAttribute="trailing" secondItem="9M8-Zd-rwt" secondAttribute="trailing" id="A7C-NI-gL6"/>
+                            <constraint firstItem="pBg-fu-hSc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KNj-U4-KGj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9M8-Zd-rwt" secondAttribute="bottom" id="YQa-lQ-F4d"/>
                             <constraint firstItem="9M8-Zd-rwt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gW9-X0-ine"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="pBg-fu-hSc" id="OCZ-qC-PUS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>

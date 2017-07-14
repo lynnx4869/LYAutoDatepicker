@@ -24,7 +24,7 @@ public struct LYAutoDatepickers {
                                       date: Date?,
                                       minDate: Date?,
                                       maxDate: Date?,
-                                      block:@escaping (_ : Date)->Void) {
+                                      block:@escaping (Date)->Void) {
         
         var apbc: LYAutoPickBaseController!
         
