@@ -2,7 +2,7 @@
 //  LYAutoDayCell.swift
 //  LYAutoDatepickers
 //
-//  Created by xianing on 2017/7/10.
+//  Created by xianing on 2017/10/17.
 //  Copyright © 2017年 lyning. All rights reserved.
 //
 
@@ -10,46 +10,55 @@ import UIKit
 
 class LYAutoDayCell: UICollectionViewCell {
     
-    public var isAble: Bool! = true {
+    var color: UIColor!
+    var title: String!{
+        didSet {
+            dayLabel.text = title
+        }
+    }
+    var isSelect: Bool! {
         didSet {
             if isAble {
-                //#333333
-                dayLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+                if isSelect {
+                    dayLabel.textColor = .white
+                    dayLabel.backgroundColor = color
+                } else {
+                    dayLabel.textColor = UIColor.color(hex: 0x333333)
+                    dayLabel.backgroundColor = .white
+                }
+            }
+        }
+    }
+    var isAble: Bool! {
+        didSet {
+            if isAble {
+                dayLabel.textColor = UIColor.color(hex: 0x333333)
+                dayLabel.backgroundColor = .white
             } else {
-                //#CCCCCC
-                dayLabel.textColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0)
-            }
-            
-            dayBg.isHidden = true
-        }
-    }
-    
-    public var isSelect: Bool! = false {
-        didSet {
-            if isSelect {
-                dayLabel.textColor = .white
-                dayBg.isHidden = false
+                dayLabel.textColor = UIColor.color(hex: 0x999999)
+                dayLabel.backgroundColor = .white
             }
         }
     }
     
-    public var day: String! {
-        didSet {
-            dayLabel.text = day
-        }
-    }
-
-    @IBOutlet fileprivate weak var dayBg: UIView!
-    @IBOutlet fileprivate weak var dayLabel: UILabel!
+    fileprivate var dayLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        dayBg.backgroundColor = LYDatepickColor
-        dayBg.layer.masksToBounds = true
-        dayBg.layer.cornerRadius = 12.5
-        dayBg.isHidden = !isSelect
+        let width = contentView.bounds.width * 0.8
+        
+        dayLabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: width))
+        dayLabel.center = contentView.center
+        dayLabel.textAlignment = .center
+        dayLabel.font = UIFont.systemFont(ofSize: 16)
+        dayLabel.layer.cornerRadius = width / 2
+        dayLabel.layer.masksToBounds = true
+        contentView.addSubview(dayLabel)
     }
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

@@ -2,7 +2,7 @@
 //  LYAutoDatepickers.swift
 //  LYAutoDatepickers
 //
-//  Created by xianing on 2017/7/7.
+//  Created by xianing on 2017/10/16.
 //  Copyright © 2017年 lyning. All rights reserved.
 //
 
@@ -14,44 +14,47 @@ public enum LYAutoDateType {
     case YMDHmS
 }
 
-//FF9000
-var LYDatepickColor = UIColor(red: 1.0, green: 0.5674, blue: 0.0, alpha: 1.0)
-
-public struct LYAutoDatepickers {
+open class LYAutoDatepickers {
     
-    public static func showDatepicker(type: LYAutoDateType,
-                                      vc: UIViewController,
-                                      date: Date?,
-                                      minDate: Date?,
-                                      maxDate: Date?,
-                                      block:@escaping (Date)->Void) {
+    /// 展示时间选择器
+    ///
+    /// - Parameters:
+    ///   - type: 选择器种类
+    ///   - vc: 展示界面
+    ///   - date: 当前日期
+    ///   - minDate: 最小日期
+    ///   - maxDate: 最大日期
+    ///   - mainColor: 主体颜色
+    ///   - callback: 完成回调
+    open static func show(type: LYAutoDateType,
+                          vc: UIViewController,
+                          date: Date?,
+                          minDate: Date?,
+                          maxDate: Date?,
+                          mainColor: UIColor?,
+                          callback: @escaping (Date)->Void) {
         
-        var apbc: LYAutoPickBaseController!
-        
-        if type == .YMD || type == .YMDHmS {
-            apbc = LYAutoDatepickController(nibName: "LYAutoDatepickController", bundle: Bundle.main)
-        } else {
-            apbc = LYAutoTimepickController(nibName: "LYAutoTimepickController", bundle: Bundle.main)
-        }
-        
-        apbc.type = type
+        let adc = LYAutoDatepickController()
+        adc.type = type
         if date != nil {
-            apbc.date = date!
+            adc.date = date!
         }
         if minDate != nil {
-            apbc.minDate = minDate
+            adc.minDate = minDate!
         }
         if maxDate != nil {
-            apbc.maxDate = maxDate
+            adc.maxDate = maxDate
         }
-        apbc.block = block
-        apbc.presentVc = vc
-
-        apbc.view.backgroundColor = .clear
-        apbc.modalPresentationStyle = .overCurrentContext
-        apbc.modalTransitionStyle = .crossDissolve
+        if mainColor != nil {
+            adc.mainColor = mainColor
+        }
+        adc.callback = callback
         
-        vc.present(apbc, animated: true, completion: nil)
+        adc.view.backgroundColor = .clear
+        adc.modalPresentationStyle = .overCurrentContext
+        adc.modalTransitionStyle = .crossDissolve
+        
+        vc.present(adc, animated: true, completion: nil)
     }
     
 }
