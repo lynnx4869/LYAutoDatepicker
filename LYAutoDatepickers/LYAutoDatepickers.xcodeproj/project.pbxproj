@@ -20,6 +20,7 @@
 		8B69557D1FA84FA100AA99D1 /* LYAutoTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6955751FA84FA000AA99D1 /* LYAutoTimeView.swift */; };
 		8B69557E1FA84FA100AA99D1 /* LYAutoMonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6955761FA84FA000AA99D1 /* LYAutoMonthHeader.swift */; };
 		8B69557F1FA84FA100AA99D1 /* LYAutoDatepickersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6955771FA84FA000AA99D1 /* LYAutoDatepickersExtensions.swift */; };
+		8B90C8D81FAAC4D000C0D6A2 /* LYAutoYearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B90C8D71FAAC4D000C0D6A2 /* LYAutoYearCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8B6955751FA84FA000AA99D1 /* LYAutoTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoTimeView.swift; sourceTree = "<group>"; };
 		8B6955761FA84FA000AA99D1 /* LYAutoMonthHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoMonthHeader.swift; sourceTree = "<group>"; };
 		8B6955771FA84FA000AA99D1 /* LYAutoDatepickersExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYAutoDatepickersExtensions.swift; sourceTree = "<group>"; };
+		8B90C8D71FAAC4D000C0D6A2 /* LYAutoYearCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYAutoYearCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				8B6955731FA84FA000AA99D1 /* LYAutoDatepickController.swift */,
 				8B6955721FA84FA000AA99D1 /* LYAutoDateView.swift */,
 				8B6955711FA84FA000AA99D1 /* LYAutoDayCell.swift */,
+				8B90C8D71FAAC4D000C0D6A2 /* LYAutoYearCell.swift */,
 				8B6955761FA84FA000AA99D1 /* LYAutoMonthHeader.swift */,
 				8B6955751FA84FA000AA99D1 /* LYAutoTimeView.swift */,
 				8B6955701FA84FA000AA99D1 /* LYAutoClockView.swift */,
@@ -179,6 +182,7 @@
 			files = (
 				8B69557A1FA84FA100AA99D1 /* LYAutoDateView.swift in Sources */,
 				8B69557F1FA84FA100AA99D1 /* LYAutoDatepickersExtensions.swift in Sources */,
+				8B90C8D81FAAC4D000C0D6A2 /* LYAutoYearCell.swift in Sources */,
 				8B69555F1FA84F8000AA99D1 /* ViewController.swift in Sources */,
 				8B69557B1FA84FA100AA99D1 /* LYAutoDatepickController.swift in Sources */,
 				8B6955781FA84FA100AA99D1 /* LYAutoClockView.swift in Sources */,

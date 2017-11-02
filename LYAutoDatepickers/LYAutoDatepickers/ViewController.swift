@@ -37,8 +37,8 @@ class ViewController: UIViewController {
         LYAutoDatepickers.show(type: .YMDHmS,
                                vc: self,
                                date: Date(timeIntervalSince1970: 1508310074),
-                               minDate: Date(timeIntervalSince1970: 1502150400),
-                               maxDate: Date(timeIntervalSince1970: 1513080000),
+                               minDate: Date(timeIntervalSince1970: 1265070000),
+                               maxDate: Date(timeIntervalSince1970: 1670841600),
                                mainColor: UIColor.color(hex: 0xff9000))
         { (date) in
             debugPrint(date.description(with: Locale.current))

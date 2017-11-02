@@ -84,14 +84,21 @@ class LYAutoDatepickController: UIViewController, LYAutoDateViewDelegate {
     }
     
     func changeDate(view: UIView, date: Date) {
-        self.date = date
+        if date >= minDate && date <= maxDate {
+            self.date = date
+        } else if date < minDate {
+            self.date = minDate
+        } else {
+            self.date = maxDate
+        }
         
         if type == .YMDHmS {
-            if view == dateView {
-                timeView.date = date
-            } else if view == timeView {
-                dateView.date = date
-            }
+            dateView.date = self.date
+            timeView.date = self.date
+        } else if type == .YMD {
+            dateView.date = self.date
+        } else if type == .HmS {
+            timeView.date = self.date
         }
     }
     

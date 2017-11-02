@@ -17,6 +17,8 @@ class LYAutoTimeView: UIView, LYAutoClockViewDelegate {
             if clockView != nil {
                 clockView.date = date
             }
+            
+            setDisplayDate()
         }
     }
     fileprivate var minDate: Date!
@@ -74,7 +76,7 @@ class LYAutoTimeView: UIView, LYAutoClockViewDelegate {
         
         minuteLabel = UILabel(frame: CGRect(x: width+16, y: 0, width: width, height: 100))
         minuteLabel.font = UIFont.systemFont(ofSize: 50.0)
-        minuteLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.8)
+        minuteLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.5)
         minuteLabel.isUserInteractionEnabled = true
         topView.addSubview(minuteLabel)
         
@@ -130,7 +132,7 @@ class LYAutoTimeView: UIView, LYAutoClockViewDelegate {
         
         if type == .minute {
             hourLabel.textColor = .white
-            minuteLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.8)
+            minuteLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.5)
             clockView.moveType = .hour
         }
     }
@@ -139,7 +141,7 @@ class LYAutoTimeView: UIView, LYAutoClockViewDelegate {
         let type = clockView.moveType
 
         if type == .hour {
-            hourLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.8)
+            hourLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.5)
             minuteLabel.textColor = .white
             clockView.moveType = .minute
         }
@@ -163,11 +165,11 @@ class LYAutoTimeView: UIView, LYAutoClockViewDelegate {
     func changeMoveType(type: LYAutoClockMoveType) {
         if type == .hour {
             hourLabel.textColor = .white
-            minuteLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.8)
+            minuteLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.5)
         }
         
         if type == .minute {
-            hourLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.8)
+            hourLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.5)
             minuteLabel.textColor = .white
         }
     }

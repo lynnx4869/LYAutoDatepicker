@@ -16,6 +16,11 @@ protocol LYAutoDateViewDelegate: NSObjectProtocol {
     
 }
 
+enum LYAutoYMType {
+    case year
+    case month
+}
+
 class LYAutoDateView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     fileprivate weak var delegate: LYAutoDateViewDelegate?
@@ -28,6 +33,22 @@ class LYAutoDateView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     fileprivate var yearLabel: UILabel!
     fileprivate var mdLabel: UILabel!
     fileprivate var days: UICollectionView!
+    
+    fileprivate var ymType: LYAutoYMType! = .month {
+        didSet {
+            days.reloadData()
+            scrollToSelectedDate()
+            
+            if ymType == .year {
+                yearLabel.textColor = .white
+                mdLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.5)
+            }
+            if ymType == .month {
+                yearLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.5)
+                mdLabel.textColor = .white
+            }
+        }
+    }
     
     fileprivate var daysPerWeek: Int = 7
 
@@ -92,13 +113,20 @@ class LYAutoDateView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         
         yearLabel = UILabel(frame: CGRect(x: 20, y: 0, width: bounds.width, height: 60))
         yearLabel.font = UIFont.systemFont(ofSize: 30.0)
-        yearLabel.textColor = .white
+        yearLabel.textColor = UIColor.color(hex: 0xffffff, alpha: 0.5)
+        yearLabel.isUserInteractionEnabled = true
         topView.addSubview(yearLabel)
         
         mdLabel = UILabel(frame: CGRect(x: 20, y: 60, width: bounds.width, height: 100))
         mdLabel.font = UIFont.systemFont(ofSize: 50.0)
         mdLabel.textColor = .white
+        mdLabel.isUserInteractionEnabled = true
         topView.addSubview(mdLabel)
+        
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(changeYearType(_:)))
+        yearLabel.addGestureRecognizer(tap1)
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(changeMonthType(_:)))
+        mdLabel.addGestureRecognizer(tap2)
         
         let bottomView = UIView(frame: CGRect(x: 0, y: bounds.height-50, width: bounds.width, height: 50))
         bottomView.backgroundColor = .white
@@ -134,15 +162,21 @@ class LYAutoDateView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         days.showsVerticalScrollIndicator = false
         days.showsHorizontalScrollIndicator = false
         days.register(LYAutoDayCell.classForCoder(), forCellWithReuseIdentifier: "LYAutoDayCellId")
+        days.register(LYAutoYearCell.classForCoder(), forCellWithReuseIdentifier: "LYAutoYearCellId")
         days.register(LYAutoMonthHeader.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "LYAutoMonthHeaderId")
         addSubview(days)
-    
     }
     
     func scrollToSelectedDate() {
         if date != nil {
-            let selectedDateIndexPath = IndexPath(item: 0, section: sectionForDate(curDate: date))
-            
+            var selectedDateIndexPath: IndexPath!
+            if ymType == .year {
+                let curComponents = calendar().dateComponents([.year], from: date)
+                let minComponents = calendar().dateComponents([.year], from: minDate)
+                selectedDateIndexPath = IndexPath(item: curComponents.year!-minComponents.year!, section: 0)
+            } else {
+                selectedDateIndexPath = IndexPath(item: 0, section: sectionForDate(curDate: date))
+            }
             if !days.indexPathsForVisibleItems.contains(selectedDateIndexPath) {
                 let sectionLayoutAttributes = days.layoutAttributesForItem(at: selectedDateIndexPath)
                 var origin = sectionLayoutAttributes?.frame.origin
@@ -161,64 +195,115 @@ class LYAutoDateView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         delegate?.sureAction(view: self)
     }
     
+    @objc fileprivate func changeYearType(_ tap: UITapGestureRecognizer) {
+        if ymType != .year {
+            ymType = .year
+        }
+    }
+    
+    @objc fileprivate func changeMonthType(_ tap: UITapGestureRecognizer) {
+        if ymType != .month {
+            ymType = .month
+        }
+    }
+    
     //MARK: - UICollectionViewDelegate
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let months = calendar().dateComponents([.month], from: minDate, to: maxDate).month! + 1
-        return months
+        if ymType == .year {
+            return 1
+        } else {
+            let months = calendar().dateComponents([.month], from: minDate, to: maxDate).month! + 1
+            return months
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let firstOfMonth = firstDateOfMonth(index: section)
-        let rangeOfWeeks = calendar().range(of: .weekOfMonth, in: .month, for: firstOfMonth)
-        return (rangeOfWeeks?.count)! * daysPerWeek
+        if ymType == .year {
+            let years = calendar().dateComponents([.year], from: minDate, to: maxDate).year! + 1
+            return years
+        } else {
+            let firstOfMonth = firstDateOfMonth(index: section)
+            let rangeOfWeeks = calendar().range(of: .weekOfMonth, in: .month, for: firstOfMonth)
+            return (rangeOfWeeks?.count)! * daysPerWeek
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LYAutoDayCellId", for: indexPath) as! LYAutoDayCell
-        cell.color = mainColor
-        
-        let firstOfMonth = firstDateOfMonth(index: indexPath.section)
-        let cellDate = dateForCellAtIndexPath(indexPath: indexPath)
-        
-        let cellDateComponents = calendar().dateComponents([.year, .month, .day], from: cellDate)
-        let firstOfMonthsComponents = calendar().dateComponents([.year, .month, .day], from: firstOfMonth)
-        
-        cell.isAble = isEnabledDate(curdate: cellDate)
-        cell.isSelect = isSelectDate(curdate: cellDate)
-        
-        if cellDateComponents.month == firstOfMonthsComponents.month {
-            let day = String(cellDateComponents.day!)
-            cell.title = day
+        if ymType == .year {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LYAutoYearCellId", for: indexPath) as! LYAutoYearCell
+            cell.color = mainColor
+
+            let minComponents = calendar().dateComponents([.year], from: minDate)
+            let curComponents = calendar().dateComponents([.year], from: date)
+            
+            let curYear = minComponents.year! + indexPath.item
+            
+            cell.isSelect = curYear == curComponents.year!
+            cell.title = String(curYear)
+
+            return cell
         } else {
-            cell.title = ""
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LYAutoDayCellId", for: indexPath) as! LYAutoDayCell
+            cell.color = mainColor
+            
+            let firstOfMonth = firstDateOfMonth(index: indexPath.section)
+            let cellDate = dateForCellAtIndexPath(indexPath: indexPath)
+            
+            let cellDateComponents = calendar().dateComponents([.year, .month, .day], from: cellDate)
+            let firstOfMonthsComponents = calendar().dateComponents([.year, .month, .day], from: firstOfMonth)
+            
+            cell.isAble = isEnabledDate(curdate: cellDate)
+            cell.isSelect = isSelectDate(curdate: cellDate)
+            
+            if cellDateComponents.month == firstOfMonthsComponents.month {
+                let day = String(cellDateComponents.day!)
+                cell.title = day
+            } else {
+                cell.title = ""
+            }
+            
+            return cell
         }
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        let firstOfMonth = firstDateOfMonth(index: indexPath.section)
-        let cellDate = dateForCellAtIndexPath(indexPath: indexPath)
-        
-        if !isEnabledDate(curdate: cellDate) {
-            return false
+        if ymType == .year {
+            return true
+        } else {
+            let firstOfMonth = firstDateOfMonth(index: indexPath.section)
+            let cellDate = dateForCellAtIndexPath(indexPath: indexPath)
+            
+            if !isEnabledDate(curdate: cellDate) {
+                return false
+            }
+            
+            let cellDateComponents = calendar().dateComponents([.year, .month, .day], from: cellDate)
+            let firstOfMonthsComponents = calendar().dateComponents([.year, .month, .day], from: firstOfMonth)
+            
+            return (cellDateComponents.month == firstOfMonthsComponents.month)
         }
-        
-        let cellDateComponents = calendar().dateComponents([.year, .month, .day], from: cellDate)
-        let firstOfMonthsComponents = calendar().dateComponents([.year, .month, .day], from: firstOfMonth)
-        
-        return (cellDateComponents.month == firstOfMonthsComponents.month)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cellDate = dateForCellAtIndexPath(indexPath: indexPath)
-        let oldComponents = calendar().dateComponents([.hour, .minute, .second], from: date)
-        var newComponents = calendar().dateComponents([.year, .month, .day, .hour, .minute, .second], from: cellDate)
-        newComponents.hour = oldComponents.hour
-        newComponents.minute = oldComponents.minute
-        newComponents.second = oldComponents.second
-        let newDate = calendar().date(from: newComponents)
-        setCurrentDate(curDate: newDate!)
+        if ymType == .year {
+            let minComponents = calendar().dateComponents([.year], from: minDate)
+            let curYear = minComponents.year! + indexPath.item
+            
+            var curComponents = calendar().dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+            curComponents.year = curYear
+            delegate?.changeDate(view: self, date: calendar().date(from: curComponents)!)
+            setDisplayDate()
+            ymType = .month
+        } else {
+            let cellDate = dateForCellAtIndexPath(indexPath: indexPath)
+            let oldComponents = calendar().dateComponents([.hour, .minute, .second], from: date)
+            var newComponents = calendar().dateComponents([.year, .month, .day, .hour, .minute, .second], from: cellDate)
+            newComponents.hour = oldComponents.hour
+            newComponents.minute = oldComponents.minute
+            newComponents.second = oldComponents.second
+            let newDate = calendar().date(from: newComponents)
+            setCurrentDate(curDate: newDate!)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -239,13 +324,20 @@ class LYAutoDateView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width / 7
-        return CGSize(width: width, height: width*0.8)
+        if ymType == .year {
+            return CGSize(width: collectionView.bounds.width, height: 60)
+        } else {
+            let width = collectionView.bounds.width / 7
+            return CGSize(width: width, height: width*0.8)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-
-        return CGSize(width: collectionView.bounds.width, height: 60)
+        if ymType == .year {
+            return CGSize.zero
+        } else {
+            return CGSize(width: collectionView.bounds.width, height: 60)
+        }
     }
     
     //MARK: - Calendar Methods
@@ -315,7 +407,6 @@ class LYAutoDateView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         }
         newCell.isSelect = true
         
-        date = curDate
         delegate?.changeDate(view: self, date: curDate)
         setDisplayDate()
     }
